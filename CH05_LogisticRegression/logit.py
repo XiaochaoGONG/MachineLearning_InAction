@@ -1,14 +1,16 @@
 import numpy as np
 
+
 def loadDataSet():
-    dataMat = []
-    labelMat = []
+    data_mat = []
+    label_mat = []
     fr = open('testSet.txt')
     for line in fr.readlines():
-        lineArr = line.strip().split()
-        dataMat.append([1.0, float(lineArr[0]), float(lineArr[1])])
-        labelMat.append(int(lineArr[2]))
-    return dataMat, labelMat
+        line_arr = line.strip().split()
+        data_mat.append([1.0, float(line_arr[0]), float(line_arr[1])])
+        label_mat.append(int(line_arr[2]))
+    return data_mat, label_mat
+
 
 def sigmoid(inX):
     return 1.0 / (1 + np.exp(-inX))
